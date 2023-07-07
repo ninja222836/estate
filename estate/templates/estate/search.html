@@ -1,0 +1,7 @@
+
+<form action="{% url 'Search_result' %}" method="get" class="content-main-block__form form-main-block">
+    {% csrf_token %}
+    <input name='search' hx-get="{% url 'Search_property' %}" hx-target="#results" hx-trigger="keyup changed delay:500ms" placeholder="Enter Zipcode to search properties" type="text" class="form-main-block__input">
+    <button type="submit" class="form-main-block__button">Search Now!</button>
+</form>
+<div id="results"> </div>

@@ -1,0 +1,28 @@
+{% if results %}
+{% csrf_token %}
+
+        <ul class="content-main-block__list list-main-block">
+            {% for property in results %}
+
+                <li>
+												<a href="{% url 'Property' property.slug %}" name="button" class="list-main-block__link">
+													<div class="list-main-block__img">
+														<img src="{{ property.image.url }}" alt="">
+													</div>
+													<span class="list-main-block__code">{{ property.zipcode }}</span>
+												</a>
+											</li>
+
+
+            {% endfor %}
+            {% else %}
+
+            <li>
+						<p>No search results</p>
+											</li>
+
+            {% endif %}
+            </ul>
+
+
+
